@@ -6,6 +6,7 @@ import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -109,7 +110,7 @@ public class Utils {
         return promise.future();
     }
 
-    public static Future<JsonObject> checkPort(JsonObject credential) {
+    public static Future<JsonObject> checkPort(@NotNull JsonObject credential) {
 
         LOG.info("check port called...");
 
@@ -149,7 +150,7 @@ public class Utils {
             promise.fail("credential is null");
 
         } else {
-
+            credential.remove(STATUS);
             Bootstrap.vertx.<JsonObject>executeBlocking(blockingHandler -> {
 
                 NuProcess process = null;

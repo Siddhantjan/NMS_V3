@@ -1,6 +1,5 @@
 package com.mindarray.nms;
 
-import com.mindarray.Bootstrap;
 import com.mindarray.Constant;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 import io.vertx.core.AbstractVerticle;
